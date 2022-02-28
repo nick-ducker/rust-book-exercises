@@ -23,7 +23,7 @@ fn main() {
             count +=1;
         }
         println!("End count = {}", count);
-
+        //////////////////////////////////////////////
         let mut new_counter = 0;
 
         let result = loop {
@@ -35,6 +35,15 @@ fn main() {
         };
 
         println!("The result of the expressive loop is {}", result);
+        //////////////////////////////////////////////
+        let mut countdown_num = 5;
+
+        while countdown_num != 0 {
+            println!("{}!", countdown_num);
+            countdown_num -= 1;
+        };
+        println!("Beep");
+
 
     } else {
         let number = 12_0000;
