@@ -18,11 +18,23 @@ fn main() {
                     break 'counting_up;
                 }
                 remaining -= 1;
-            }
+            };
 
             count +=1;
         }
-        println!("End count = {}", count)
+        println!("End count = {}", count);
+
+        let mut new_counter = 0;
+
+        let result = loop {
+            new_counter += 1;
+
+            if new_counter == 10 {
+                break new_counter * 2;
+            }
+        };
+
+        println!("The result of the expressive loop is {}", result);
 
     } else {
         let number = 12_0000;
