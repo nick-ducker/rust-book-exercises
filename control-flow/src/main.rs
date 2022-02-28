@@ -43,6 +43,13 @@ fn main() {
             countdown_num -= 1;
         };
         println!("Beep");
+
+        // OR
+
+        for number in (1..4).rev() {
+            println!("{}", number);
+        }
+        println!("improved Beep");
         /////////////////////////////////////////////
         let array = [10,20,60,80];
         for element in array {
