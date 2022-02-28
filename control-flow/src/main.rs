@@ -1,19 +1,45 @@
 fn main() {
-    let number = 12_0000;
+    let looping = true;
 
+    if looping {
+        let mut count = 0;
 
-    // must be a bool, can't do that whacky JS stuff
-    if number < 9001 {
-        println!("This is a boring number");
-    } else if number > 9000 && number < 10_000 {
-        println!("IT'S OVER 9000!");
+        // ' before a variable denotes a label, cool.
+        'counting_up: loop {
+            println!("Count = {}", count);
+            let mut remaining = 10;
+
+            loop {
+                println!("Remaining loops = {}", remaining);
+                if remaining == 9 {
+                    break;
+                }
+                if count == 2 {
+                    break 'counting_up;
+                }
+                remaining -= 1;
+            }
+
+            count +=1;
+        }
+        println!("End count = {}", count)
+
     } else {
-        println!("WREEEEE");
+        let number = 12_0000;
+        
+        // must be a bool, can't do that whacky JS stuff
+        if number < 9001 {
+            println!("This is a boring number");
+        } else if number > 9000 && number < 10_000 {
+            println!("IT'S OVER 9000!");
+        } else {
+            println!("WREEEEE");
+        }
+    
+        // Oh this is cool
+        let cold = true;
+        let string = if cold {"brrrr"} else {"def not brrr"};
+        println!("Hmm the weather is {}", string);
     }
-
-    // Oh this is cool
-    let cold = true;
-    let string = if cold {"brrrr"} else {"def not brrr"};
-    println!("Hmm the weather is {}", string);
 
 }
