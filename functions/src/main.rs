@@ -4,6 +4,11 @@ fn main() {
     another_function_boi(5);
 
     two_param_boi(6, 'k');
+
+    i_am_a_statement();
+    let expressed_value = i_am_an_expression();
+
+    println!("This has been expressed: {}", expressed_value);
 }
 
 fn two_param_boi(x: i32, unit: char) {
@@ -15,3 +20,14 @@ fn another_function_boi(param: i32) {
 
     println!("You gave me the param of {}", param)
 }
+
+fn i_am_a_statement() {
+    let x = 5;
+    println!("Look at me make {} statements", x);
+}
+
+fn i_am_an_expression() -> i32 {
+    5
+}
+
+
