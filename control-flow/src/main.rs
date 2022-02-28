@@ -4,10 +4,16 @@ fn main() {
 
     // must be a bool, can't do that whacky JS stuff
     if number < 9001 {
-        println!("This is a boring number")
+        println!("This is a boring number");
     } else if number > 9000 && number < 10_000 {
-        println!("IT'S OVER 9000!")
+        println!("IT'S OVER 9000!");
     } else {
-        println!("WREEEEE")
+        println!("WREEEEE");
     }
+
+    // Oh this is cool
+    let cold = true;
+    let string = if cold {"brrrr"} else {"def not brrr"};
+    println!("Hmm the weather is {}", string);
+
 }
