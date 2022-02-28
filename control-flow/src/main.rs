@@ -43,6 +43,11 @@ fn main() {
             countdown_num -= 1;
         };
         println!("Beep");
+        /////////////////////////////////////////////
+        let array = [10,20,60,80];
+        for element in array {
+            println!("{}", element);
+        }
 
 
     } else {
