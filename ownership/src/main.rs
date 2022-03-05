@@ -26,12 +26,31 @@ fn main() {
     // the value to a new variable, the previous pointer is
     // invalidated and the "heap" variable goes out of scope.
     let heap = String::from("I'm gonna getcha");
-    let heaping = heap;
+    let heaping = heap; // MOVE
+    let heaps = heaping.clone();
     // The below println will break
     // println!("{}", heap);
 
-    // the below println is valid
+    // the below println is valid as is the one below
     println!("{}", heaping);
+    println!("{}, {}", heaping, heaps);
+
+    let the_boi = String::from("the boi");
+    // note that the boi must be returned here, or
+    // the ownership will go out of scope and
+    // we'll get a big sad.
+    let (the_boi_2, len) = calculate_length(the_boi);
+
+    println!("{} is {} long",the_boi_2, len);
+
 
     // Rust calls drop on heap stored memory after this point
+}
+
+// This function takes ownership of the string it operates on
+// and then explicitly returns it so the passed parameter doesn't
+// go out of scope at the end of the fucntion.
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len();
+    (s, length)
 }
