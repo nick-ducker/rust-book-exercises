@@ -1,5 +1,6 @@
 fn main() {
     // This is a hardcoded string literal,
+    // note: this is technically a string slice!
     // This is stored on the stack within the binary =D
     // It is immutable, which makes life a bit harder
     let string_literal = "Hello there";
