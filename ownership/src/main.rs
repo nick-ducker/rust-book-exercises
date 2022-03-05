@@ -7,9 +7,19 @@ fn main() {
     println!("{}", string_literal);
 
     // This is a String that is *built* from a literal
+    // This is stored on the heap using a pointer
     // This can be mutated, yay!
     let mut string_typed_string = String::from("Hello here");
     string_typed_string.push_str(" Mr Nick");
 
     println!("{}", string_typed_string + ", beep");
+
+    // When we do this with data that lives on the stack,
+    // The value is copied to the new variable,
+    // super easy!
+    let x = "Zing";
+    let y = x;
+    println!("{}, {}",x, y);
+
+    // Rust calls drop on string_typed_string after this point
 }
