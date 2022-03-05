@@ -21,5 +21,17 @@ fn main() {
     let y = x;
     println!("{}, {}",x, y);
 
-    // Rust calls drop on string_typed_string after this point
+    // The value here lives on the heap, and therefore the,
+    // variable has a pointer attached to it. When we assign 
+    // the value to a new variable, the previous pointer is
+    // invalidated and the "heap" variable goes out of scope.
+    let heap = String::from("I'm gonna getcha");
+    let heaping = heap;
+    // The below println will break
+    // println!("{}", heap);
+
+    // the below println is valid
+    println!("{}", heaping);
+
+    // Rust calls drop on heap stored memory after this point
 }
