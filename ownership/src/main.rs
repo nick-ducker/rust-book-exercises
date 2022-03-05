@@ -44,9 +44,24 @@ fn main() {
     println!("{} is {} long",the_boi_2, len);
 
     let the_other_boi = String::from("the other boi");
+    // Note how here we pass the reference to the string, 
+    // so we don't have to explitly return ownership back to
+    // the main function in this context to use it later.
     let boi_length = calculate_length_borrow(&the_other_boi);
 
     println!("{} is {} long", the_other_boi, boi_length);
+
+    let mut stringo_star = String::from("beep");
+    let ing = &mut stringo_star;
+    // let ing_2 = &mut stringo_star; 
+    // the above will cause an error, as you cannot have more
+    // than one mutable reference to the same data.
+
+    // let ing_2 = &stringo_star;
+    // the above line will also cause an error, as you cannot have
+    // a mutable and immutable reference to the same data.
+    println!("{}", ing);
+
 
 
     // Rust calls drop on heap stored memory after this point
@@ -61,6 +76,8 @@ fn calculate_length(s: String) -> (String, usize) {
 }
 
 fn calculate_length_borrow(s: &str) -> usize {
+    // note that we cant mutate the string via a reference,
+    // unless we pass &mut str in this context
     let length = s.len();
     length
 }
