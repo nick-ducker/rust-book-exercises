@@ -43,6 +43,11 @@ fn main() {
 
     println!("{} is {} long",the_boi_2, len);
 
+    let the_other_boi = String::from("the other boi");
+    let boi_length = calculate_length_borrow(&the_other_boi);
+
+    println!("{} is {} long", the_other_boi, boi_length);
+
 
     // Rust calls drop on heap stored memory after this point
 }
@@ -53,4 +58,9 @@ fn main() {
 fn calculate_length(s: String) -> (String, usize) {
     let length = s.len();
     (s, length)
+}
+
+fn calculate_length_borrow(s: &str) -> usize {
+    let length = s.len();
+    length
 }
