@@ -23,7 +23,12 @@ fn main() {
     let localhost = IpAddrKind::V6(127, 0, 0, 1);
     let _loopback = IpAddrKind::V4(String::from("::1"));
 
-    localhost.what_am_i()
+    localhost.what_am_i();
 
+    // But how would I pass none or some if I don't know whether
+    // The value is null or not?
+    let null_biners = Gear::Biner(None); 
+
+    let some_biners = Gear::Biner(Some(4));
 
 }
