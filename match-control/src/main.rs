@@ -1,16 +1,30 @@
+#[derive(Debug)]
+enum State {
+    Sa,
+    Nt,
+    Nsw,
+    Qld,
+    Wa,
+    Tas,
+    Vic,
+}
+
 enum Coin {
-    Penny,
-    Nickel,
-    Dime,
-    Quarter,
+    Five,
+    Ten,
+    Twenty,
+    Fifty(State),
 }
 
 fn value_in_cents(coin: Coin) -> u8 {
     match coin {
-        Coin::Penny => 1,
-        Coin::Nickel => 5,
-        Coin::Dime => 10,
-        Coin::Quarter => 25,
+        Coin::Five => 1,
+        Coin::Ten => 5,
+        Coin::Twenty => 10,
+        Coin::Fifty(state) => {
+            println!("this fiddy cent apparently is from {:?}", state);
+            25
+        },
     }
 }
  
